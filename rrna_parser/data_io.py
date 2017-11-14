@@ -145,8 +145,7 @@ def create_gff_db(gff_filename, db_filename):
     print('Feature\tCount\n-------\t-----')
     for item in db.featuretypes():
         print('{0}\t{1}'.format(item, db.count_features_of_type(item)))
-
-    return None
+    return db
 
 # Read in GFF database created by gffutils
 def read_gff_db(db_filename, report = False):
