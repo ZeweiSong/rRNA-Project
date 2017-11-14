@@ -14,6 +14,8 @@ from rrna_parser import rrna
 from rrna_parser import data_io
 import os
 
+
+# Read in the FASTA and GFF data.
 genome = 'GCF_000146045.2_R64'
 fna_file = genome + '_genomic.fna'
 gff_file = genome + '_genomic.gff'
@@ -27,6 +29,12 @@ else: # If it is not there, creadte a new database, and write to a new fnadb fil
     data_io.write_fna_db(fna, fna_db_file)
 
 if os.path.isfile(gff_db_file): # Check if gffdb exist
-    gff = data_io.read_gff_db(gff_db_file)
+    gff = data_io.read_gff_db(gff_db_file, report=True)
 else: # If not, read in the GFF file and create a new gff file
     gff = data_io.create_gff_db(gff_file, gff_db_file)
+
+# Read in primers
+primers = rrna.primer() # create a primer object
+primer_fna = data_io.read_fasta('rRNA_primers.fasta') # Read in the FASTA file of primers
+for record in primer_fna: # Add primers to the primer object
+    primers.add_primer(record[0], record[1])
