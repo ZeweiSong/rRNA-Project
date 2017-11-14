@@ -10,4 +10,5 @@ songzewei@genomics.cn
 """
 from __future__ import print_function
 from __future__ import division
-from rrna_parser
+from rrna_parser import rrna
+from rrna_parser import data_io
