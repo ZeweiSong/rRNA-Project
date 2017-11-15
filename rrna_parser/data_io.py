@@ -136,6 +136,17 @@ def read_fna_db(db_file):
     with open(db_file, 'r') as f:
         return json.load(f)
 
+def write_json(db, db_file):
+    import json
+    with open(db_file, 'w') as f:
+        json.dump(db, f)
+    return db_file
+
+def read_json(db_file):
+    import json
+    with open(db_file, 'r') as f:
+        return json.load(f)
+
 # Create a GFF database so gffutils can read in as database.
 def create_gff_db(gff_filename, db_filename):
     import gffutils
