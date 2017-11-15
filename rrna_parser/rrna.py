@@ -15,17 +15,18 @@ import json
 import re
 
 class rrna_miner:
-    def __init__(selfself, fnadb_file, gffdb_file): # Need fna_json, gffdb_gttutils, and the Class primer
-        self.fnadb = data_io.read_fna_db(fnadb_file)
-        self.gffdb = data_io.read_gff_db(gffdb_file)
-
+    def __init__(self, fnadb, gffdb): # Need fna_json, gffdb_gttutils, and the Class primer
+        self.fnadb = fnadb
+        self.gffdb = gffdb
     # Find all primers site on all contigs with max mismatch = 1
     def mine_primers(self, primer_class, mismatch = 1):
         loci = {}
-        for contig, seq in fnadb.items():
+        primer_list = list(primer_class)
+        print(primer_list)
+        for contig, seq in self.fnadb.items():
             print('Searching {0}: {1} bp ...'.format(contig, len(seq)))
             loci[contig] = []  # Create a new dict for each contig
-            for p in primer_class:
+            for p in primer_list:
                 pos = data_io.search_oligo_loc(seq, p[1],
                                                mismatch=mismatch)  # Find all loci of current primer for current contig
                 for key, value in pos.items():
@@ -71,7 +72,7 @@ class rrna_miner:
         combined = {}
         for contig in list(self.fnadb.keys()):  # search for all contigs:
             try:
-                combined[contig] = primers[contig] + rrna_gene[contig]
+                combined[contig] = primers[contig] + rrna_genes[contig]
                 combined[contig].sort(key=lambda x: x[2])
             except KeyError:
                 combined[contig] = []
