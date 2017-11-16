@@ -13,6 +13,7 @@ from __future__ import division
 from rrna_parser import data_io
 import json
 import re
+import random
 
 class rrna_miner:
     def __init__(self, fnadb, gffdb): # Need fna_json, gffdb_gttutils, and the Class primer
@@ -246,3 +247,21 @@ def minimizer(kmer, ml):
 
     mlist.sort()
     return mlist[0]
+
+
+# Random mutate a given sequence with on the given number of nucleotide
+# If with_replacement=True, the mutation happens one at a time, so multiulpe mutations can occur on one loci.
+def mutation(seq, number, with_replacement=False):
+    i = range(len(seq))
+    seq = [i for i in seq]
+    base = {'A':['T','C','G'],'T':['A','C','G'],\
+            'C':['A','T','G'],'G':['A','T','C']}
+
+    if with_replacement:
+        loci = random.choices(i, number)
+    else:
+        loci = random.sample(i, number)
+
+    for j in loci:
+        seq[j] = random.sample(base[seq[j]], 1)[0]
+    return ''.join(seq)

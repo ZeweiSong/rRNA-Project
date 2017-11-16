@@ -18,7 +18,7 @@ def rnd_frag(a, b):
 def fragmentation(seq, minL, maxL):
     pool = []
     start = 1
-    while len(seq) > 0:
+    while len(seq) >= minL:
         frag = rnd_frag(minL, maxL) # generate a random length fragment
         stop = start + frag - 1
         pool.append((seq[:frag], start, stop)) # add the fragment to pool
@@ -32,11 +32,11 @@ def fragmentation(seq, minL, maxL):
 def stlfr_data(pool, rate, readL):
     import random
     total_length = len(''.join([i[0] for i in pool])) # the total length of the molecue
-    print(total_length)
+    print('The total length of template DNA is {0} bp.'.format(total_length))
     expected_length = int(total_length * rate)
-    expected_number = expected_length // readL
-    print(expected_number)
-    print(len(pool))
+    expected_number = expected_length // readL + 1
+    print('We want to recover {0}% = {1} bp sequences, using {2} bp read.'.format(rate*100.0, expected_length, readL))
+    print('Picking {0} reads from the total of {1} reads ...'.format(expected_number, len(pool)))
     all_read = [(i[0][:readL], i[1], i[1] + readL - 1) for i in pool] # All possible short reads
     run = random.sample(all_read, expected_number)
     run.sort(key=lambda x:x[2])
