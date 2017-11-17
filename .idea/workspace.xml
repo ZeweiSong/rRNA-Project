@@ -31,7 +31,7 @@
       <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
+            <state relative-caret-position="1408">
               <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
               <folding>
                 <element signature="e#138#175#0" expanded="true" />
@@ -77,8 +77,8 @@
       <file leaf-file-name="rrna.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rrna_parser/rrna.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="266" column="23" lean-forward="true" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
+            <state relative-caret-position="1012">
+              <caret line="266" column="23" lean-forward="false" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
               <folding>
                 <element signature="e#138#175#0" expanded="true" />
                 <element signature="e#299#7900#0" expanded="false" />
@@ -123,7 +123,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="446" />
     <option name="y" value="-10" />
     <option name="width" value="974" />
@@ -336,13 +336,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23093449" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5021482" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32918552" sideWeight="0.49785176" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43501613" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -356,6 +355,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -383,6 +383,72 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/rrna_parser/data_io.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2178">
+          <caret line="147" column="27" lean-forward="false" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+          <folding>
+            <element signature="e#1061#2981#0" expanded="false" />
+            <element signature="e#7140#7716#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/ex1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <element signature="e#138#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rrna_parser/fragmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rrna_parser/kmer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding>
+            <element signature="e#138#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rrna_parser/rrna.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5852">
+          <caret line="266" column="23" lean-forward="true" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
+          <folding>
+            <element signature="e#138#175#0" expanded="true" />
+            <element signature="e#299#7900#0" expanded="false" />
+            <element signature="e#570#1752#0" expanded="false" />
+            <element signature="e#1858#2696#0" expanded="false" />
+            <element signature="e#7920#8794#0" expanded="false" />
+            <element signature="e#8820#10228#0" expanded="false" />
+            <element signature="e#10348#10432#0" expanded="false" />
+            <element signature="e#10524#10740#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/rrna_signature.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#138#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rrna_parser/data_io.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2178">
@@ -563,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rrna_parser/rrna.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="266" column="23" lean-forward="true" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
+        <state relative-caret-position="1012">
+          <caret line="266" column="23" lean-forward="false" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
           <folding>
             <element signature="e#138#175#0" expanded="true" />
             <element signature="e#299#7900#0" expanded="false" />
@@ -580,7 +646,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
+        <state relative-caret-position="1408">
           <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
           <folding>
             <element signature="e#138#175#0" expanded="true" />
