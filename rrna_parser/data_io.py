@@ -378,3 +378,101 @@ def fragment_dist(seq_length = 5000, mean = 200, std = 1000):
 def generate_fragment(seq, mean = 200, std = 500, filter_low = 50, filter_high = 1000):
     pass
     # return a FASTA list
+
+
+#%% Simulate DNA mutation
+# Generate SNP on the given DNA sequences based on similarities
+# If similarity is 0.97, then it will generate a sequence with 3% difference
+# SNP loci are draw randomly without replacement, so there is chance for two or three continuous SNPs.
+def mutate_seq(seq, similarity):
+    import random
+    snp_dict = {'A':['T','C','G'], 'T':['A','C','G'],\
+                'C':['A','T','G'], 'G':['A','T','C']}
+    seq = seq.upper()
+    seq = [i for i in seq]
+    if similarity > 1:
+        print('Similarity need to be between 0 and 1.')
+        return None
+    else:
+        #print(len(seq) * (1-similarity))
+        pos = range(0, len(seq))
+        pos_sample = random.sample(pos, int(len(seq) * (1 - similarity)))
+        for item in pos_sample:
+            seq[item] = random.sample(snp_dict[seq[item]], 1)[0]
+        seq = ''.join(seq)
+        return seq
+
+
+#%% Kmer handlings
+# Several slow kmer functions for testing
+# May need to consider using khmer on real pipelines
+
+
+# Return the kmer list of a given sequences
+# It will return all kmer in both strand WITHOUT dereplication
+# So the kmer will be REDUNDANT in the output
+def kmer(seq, size):
+    seq = seq.upper()
+    seq_length = len(seq)
+    kmer = []
+    for i in range(seq_length - size + 1):
+        kmer.append(seq[i:i+size])
+    seq_rev = revcomp(seq)
+    for i in range(seq_length - size + 1):
+        kmer.append(seq_rev[i:i+size])
+    return kmer
+
+
+# Return a kmer table with abundance on the given kmer length for a set of sequences
+# The input sequences need to be in the style as the otuput of read_seqs() or read_fasta(),
+# In which sequences are store in tuplew as (label, sequecne), (label, sequence), ...)
+def kmer_count(seqs, size):
+    kmer_list = []
+    for item in seqs:
+        kmer_list += kmer(item[1], size)
+    kmer_table = {}
+    for item in kmer_list:
+        kmer_table[item] = kmer_table.get(item, 0) + 1 # one line code for adding new keys
+#        try:
+#            kmer_table[item] += 1
+#        except KeyError:
+#            kmer_table[item] = 1
+    return kmer_table
+
+
+# Return the kmer table by compare two kmer table from kmer_table().
+# In order to speed up, we use the kmer_count as input, instead of raw sequences
+def kmer_pair(count1, count2, size):
+    kmers = set(list(count1.keys()) + list(count2.keys()))
+    kmer_table = []
+    for item in kmers:
+        kmer_table.append((item, count1.get(item, 0), count2.get(item, 0)))
+    kmer_table.sort(key=lambda x:x[0])
+    return kmer_table
+
+
+# Return the kmer distance, Jaccard distance, NOT account for kmer abundance
+def kmer_jaccard(kmer_table):
+    total_size = len(kmer_table)
+    shared_size = 0
+    for line in kmer_table:
+        if line[1] > 0 and line[2] > 0: # Current kmer is present in both sets
+            shared_size += 1
+    return shared_size / total_size
+
+def kmer_mash_distance(jaccard, size):
+    import numpy as np
+    jac = jaccard
+    if jac == 0:
+        return 1
+    else:
+        mash_distance = (-1/size) * np.log((2 * jac)/(1 + jac))
+        return mash_distance
+
+
+# Return the kmer distance, accounted for kmer abundance, usng Euclidean distance
+# May need to standardize before calculating
+def kmer_euclidean(set1, set2, size):
+    kmer_table = kmer_pair(set1, set2, size)
+    distance = sum([(i[1] - i[2]) ** 2 for i in kmer_table]) ** 0.5
+    return distance
