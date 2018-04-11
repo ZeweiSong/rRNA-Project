@@ -214,7 +214,7 @@ def iupac_re(seq):
     # return the location of the original strand
 # The location should start from 1 instead of 0 for consistence.
 def convert_rc_loc(seq_l, rev_start, rev_stop):
-    return (seq_l - rev_stop, seq_l - rev_start)
+    return (seq_l - rev_stop + 1, seq_l - rev_start + 1)
 
 #%% Manipulation on GFF database created with gffutils
 
