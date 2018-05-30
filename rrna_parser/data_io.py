@@ -329,9 +329,9 @@ def search_location(seq, oligo):
     return loc_set
 
 # A combined function from primer search to primer loci.
-def search_oligo_loc(seq, oligo, mismatch = 0):
+def search_oligo_loc(seq, oligo, mismatch = 0, rev_strand = True):
     # Get all candidate match on target
-    m = search_oligo(seq, oligo, mismatch = mismatch, rev_strand = True)
+    m = search_oligo(seq, oligo, mismatch = mismatch, rev_strand = rev_strand)
     loc = {}
     for item in m[0]:
         if item.isupper(): # target is on original strand
