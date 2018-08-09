@@ -425,7 +425,7 @@ def kmer(seq, size):
 
 # Return a kmer table with abundance on the given kmer length for a set of sequences
 # The input sequences need to be in the style as the otuput of read_seqs() or read_fasta(),
-# In which sequences are store in tuplew as (label, sequecne), (label, sequence), ...)
+# In which sequences are store in tuple as (label, sequecne), (label, sequence), ...)
 def kmer_count(seqs, size):
     kmer_list = []
     for item in seqs:
